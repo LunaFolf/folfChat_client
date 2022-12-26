@@ -25,6 +25,7 @@ interface Actions {
 
   // History
   addMessageToHistory(message: ChatMessage): void;
+  clearHistory(): void;
 
   // Username
   setUsername(username: string): void;

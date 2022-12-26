@@ -5,7 +5,7 @@ const chatListEl = document.getElementById('chat-grid') as HTMLDivElement;
 
 const messageQueue: string[] = [];
 
-const wss = new WebSocket('ws://localhost:8081');
+const wss = new WebSocket('ws://api.jaxbot.co.uk:6982');
 
 wss.onopen = () => {
   while (messageQueue.length > 0) {
@@ -36,6 +36,7 @@ wss.onmessage = event => {
       return;
     }
     const history = JSON.parse(event.data).messageHistory;
+    window.store.actions.clearHistory();
     history.forEach((message: ChatMessage) => {
       window.store.actions.addMessageToHistory(message);
     })

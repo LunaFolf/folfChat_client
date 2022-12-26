@@ -36,6 +36,10 @@ const actions: Actions = {
     // Adds a message to the chat history.
     state._history.push(message)
   },
+  clearHistory (): void {
+    // Clears the chat history.
+    state._history = []
+  },
   setUsername (username: string): void {
     // Sets the username of the user.
     localStorage.setItem('username', username)
