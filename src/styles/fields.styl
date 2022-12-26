@@ -1,0 +1,77 @@
+input, button
+  font-family Arial, Helvetica, sans-serif
+
+a
+  color accent
+
+input
+  background-color primary
+  border 0
+  color light
+  font-weight bolder
+  height 2.5rem
+  outline 0 solid accent
+
+  transition outline, height, margin-bottom padding-top .25s ease-in-out
+
+  &:focus::placeholder
+    color alpha(dark, .5)
+
+  &::placeholder
+    color dark
+
+  &[type="text"]
+    padding 0 .5rem
+
+  &.loading
+    outline .125rem dashed accent
+
+button
+  background-color light
+  border 0
+  color white
+  padding .5rem 1rem
+  text-align center
+  text-decoration none
+  display inline-block
+  font-size 1.5rem
+  box-shadow .25rem .25rem 1rem alpha(black, .5)
+  cursor pointer
+  border-radius .25rem
+  background-color primary
+
+  &:hover
+    background-color accent
+    color black
+
+.fab
+  z-index 1000
+  position fixed
+  display flex
+  width 3.5rem
+  justify-content center
+  align-items center
+  font-weight bold
+  apsect-radio 1/1
+  padding .5rem
+  margin .75rem
+  font-size 1.5rem
+  color white
+  cursor pointer
+  background-color alpha(primary, .5)
+  border-radius 100%
+
+  box-shadow .25rem .25rem 1rem alpha(black, .5)
+
+  &:hover
+    font-weight bolder
+    background-color accent
+    color black
+
+.closeBtn
+  top 0
+  right 0
+
+.returnToTop
+  bottom 1rem
+  right 1rem

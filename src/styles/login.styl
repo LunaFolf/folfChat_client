@@ -1,0 +1,44 @@
+.login__wrapper, .auth__success
+  height 100vh
+  display grid
+  place-content center
+  gap .5rem
+
+  .login__form
+    display grid
+    gap .5rem
+    grid-template-columns 1fr 1fr
+
+    .existing, .new
+      display grid
+      padding 0.5rem
+      gap .5rem
+      place-content center
+
+    .existing
+      border-right .125rem solid alpha(light, 0.25)
+    
+    .new
+      border-left .125rem solid alpha(light, 0.25)
+
+  .auth__token
+    font-size 5rem
+    font-weight bolder
+    text-transform uppercase
+    text-align center
+
+@media screen and (max-width: 768px)
+  .login__wrapper
+
+    .login__form
+      grid-template-columns 1fr
+      gap 0
+
+      .existing, .new
+        border 0
+
+      .existing
+        border-bottom .0125rem solid alpha(light, 0.25)
+
+      .new
+        border-top .0125rem solid alpha(light, 0.25)

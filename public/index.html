@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap" rel="stylesheet">
+  <title>FolfChat</title>
+</head>
+
+<body>
+  <div id="wrapper">
+    <div id="loading" class="hidden">
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+
+    <div>
+      <div class="login__wrapper">
+        <div>
+          <h1 class="login__title">Folf Chat</h1>
+          <p class="login__subtitle">A simple chat app</p>
+        </div>
+        <hr>
+        <div class="login__form">
+          <div class="existing">
+            <div>
+              Existing User? <em>Login</em>
+            </div>
+            <div>
+              <input type="text" class="login__input" id="login__input" placeholder="Token">
+            </div>
+          </div>
+          <div class="new">
+            <div>
+              New User? <em>Signup</em>
+            </div>
+            <div>
+              <input type="text" class="signup__input" id="signup__input" placeholder="Username">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="auth__success hidden">
+        <div>
+          <h1 class="auth__title">Folf Chat</h1>
+          <p class="auth__subtitle">Successful signup!</p>
+          <p>The following is your memerable token, <strong>DO NOT LOOSE OR FORGET THIS.</strong></p>
+          <p>This is what you will use for future login attempts.</p>
+          <hr>
+          <div class="auth__token">
+
+          </div>
+          <div>
+            <button class="auth__continue">Continue</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="chat__wrapper hidden">
+        <div class="grid" id="chat-grid">
+
+        </div>
+      </div>
+
+      <div class="chat__box hidden">
+        <input type="text" class="chat__input" id="chat__input" placeholder="Type a message...">
+      </div>
+    </div>
+</body>
+
+</html>

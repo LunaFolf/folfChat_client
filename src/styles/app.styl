@@ -1,0 +1,122 @@
+// Import css reset
+@import './reset.css'
+
+// Import variables
+@import './variables.styl'
+
+@font-face
+  font-family whiskeeHand
+  src url('../fonts/Whiskee Hand.ttf')
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;400;700;900&display=swap');
+
+html, body
+  overflow hidden
+
+body
+  font-family 'Montserrat', sans-serif
+  background-color dark
+  color light
+
+#wrapper
+  height 100vh
+  width 100vw
+  padding-bottom env(safe-area-inset-bottom)
+  overflow-y scroll
+
+hr
+  border 0
+  border-top .125rem solid light
+  border-bottom .125rem solid light
+  height 1rem
+  width 100%
+
+@keyframes loading
+  0%
+    opacity 0
+    transform scale(0)
+  50%
+    opacity 1
+  100%
+    transform scale(1)
+    opacity 0
+
+animationTime = 2s
+delayOne = 0s
+delayTwo = animationTime/4
+delayThree = animationTime/2
+delayFour = animationTime*3/4
+
+#loading
+  position fixed
+  top 0
+  left 0
+  width 100vw
+  height 100vh
+  z-index 1000
+  background-image radial-gradient(alpha(light, 0.75), dark)
+
+  display grid
+  grid-template-columns 1fr
+  grid-template-rows 1fr
+  justify-items center
+  align-items center
+  font-size 2rem
+  font-weight bolder
+
+  .circle
+    width 20rem
+    height 20rem
+    border-radius 50%
+    border .25rem solid accent
+    position absolute
+    opacity 0
+    animation loading animationTime infinite ease-out
+
+    &:nth-child(1)
+      animation-delay delayOne
+
+    &:nth-child(2)
+      animation-delay delayTwo
+
+    &:nth-child(3)
+      animation-delay delayThree
+
+    &:nth-child(4)
+      animation-delay delayFour
+
+.chat__wrapper
+  padding 1rem .5rem
+  height "calc(100vh - %s)" % (fieldHeights)
+  max-height "calc(100vh - %s)" % (fieldHeights)
+  display grid
+  overflow-y scroll
+  grid-template-columns 60vw
+  grid-template-rows 1fr
+  place-content center
+  background-image linear-gradient(to top, dark 0%, primary 100%)
+
+@media screen and (max-width: 1536px)
+  .chat__wrapper
+    grid-template-columns 1fr
+
+.chat__box
+  height fieldHeights
+  width 100vw
+  display grid
+  grid-template-columns 1fr
+  text-align top
+  margin 0
+  z-index 1
+
+
+// Import mixins
+@import './helpers.styl'
+@import './animations.styl'
+
+// Import DOM elements
+@import './fields.styl'
+@import './grid.styl'
+
+@import './chat.styl'
+@import './login.styl'

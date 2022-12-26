@@ -1,0 +1,36 @@
+{
+  "name": "msgbrowser",
+  "displayName": "MSG Browser",
+  "version": "1.0.0",
+  "description": "An improved e621.net browser using modern SPA technology.",
+  "private": true,
+  "scripts": {
+    "serve": "webpack serve --mode development",
+    "build": "webpack --mode production"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "css-loader": "^6.7.1",
+    "csv-loader": "^3.0.5",
+    "eslint": "^8.26.0",
+    "eslint-config-prettier": "^8.5.0",
+    "eslint-plugin-functional": "^4.4.1",
+    "eslint-plugin-import": "^2.26.0",
+    "html-webpack-plugin": "^5.5.0",
+    "prettier": "^2.7.1",
+    "style-loader": "^3.3.1",
+    "stylus": "^0.59.0",
+    "stylus-loader": "^7.1.0",
+    "stylus-native-loader": "^1.4.8",
+    "ts-loader": "^9.4.1",
+    "typescript": "^4.8.4",
+    "webpack": "^5.74.0",
+    "webpack-cli": "^4.10.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "dependencies": {
+    "gunzip-file": "^0.1.1"
+  }
+}

@@ -1,0 +1,67 @@
+.grid
+  display grid
+  gap .25rem
+  grid-template-columns 1fr
+  grid-auto-rows min-content
+
+.chat__item
+  display grid
+  grid-template-columns 128px max-content
+  gap .25rem
+  grid-template-areas "avatar content"
+  align-items end
+  place-content start
+
+  &.self
+    grid-template-columns max-content 128px
+    grid-template-areas "content avatar"
+    place-content end
+
+    .chat__item__content
+      text-align right
+      border-radius .5rem .5rem 0 .5rem
+
+    &[data-previous="true"]
+      .chat__item__content
+        grid-area content
+        background-color accent
+        padding .5rem
+        font-weight medium
+        border-radius .5rem 0 .5rem .5rem
+
+  .chat__item__avatar
+    display grid
+    gap .25rem
+    grid-template-columns 1fr
+    justify-items center
+    font-weight bold
+    grid-area avatar
+
+    .avatar__icon
+      width 4rem
+      height auto
+      
+      img
+        border-radius 1rem
+
+  .chat__item__content
+    grid-area content
+    background-color accent
+    padding .5rem
+    font-weight medium
+    border-radius .5rem .5rem .5rem 0
+
+  &[data-previous="true"]
+    .chat__item__content
+      grid-area content
+      background-color accent
+      padding .5rem
+      font-weight medium
+      border-radius 0 .5rem .5rem .5rem
+
+@media screen and (max-width: 450px)
+  .grid
+    gap .125rem
+
+  .chat__item
+    gap .125rem
