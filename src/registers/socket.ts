@@ -24,6 +24,14 @@ wss.onmessage = event => {
     const chatEl = createChatEl(content, ownMessage, hideAvatar);
 
     chatListEl.appendChild(chatEl);
+
+    const hasNotificationPermission = Notification.permission === 'granted';
+    if (hasNotificationPermission && !ownMessage) {
+      new Notification(username, {
+        body: content,
+        icon: `https://avatars.dicebear.com/api/identicon/${username}.svg?b=%23ffffff22`
+      })
+    }
   }
 
   if (type === 'update') {

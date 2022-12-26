@@ -16,3 +16,8 @@ if (existingToken && existingUsername) {
   generateChatFromHistory();
 }
 
+const hasNotificationPermission = Notification.permission === 'granted'
+
+if (!hasNotificationPermission) {
+  Notification.requestPermission()
+}
