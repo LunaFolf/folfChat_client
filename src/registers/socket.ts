@@ -27,9 +27,10 @@ wss.onmessage = event => {
 
     const hasNotificationPermission = Notification.permission === 'granted';
     if (hasNotificationPermission && !ownMessage) {
-      new Notification(username, {
-        body: content,
-        icon: `https://avatars.dicebear.com/api/identicon/${username}.svg?b=%23ffffff22`
+      new Notification(`${username}`, {
+        body: `${content}`,
+        icon: `https://avatars.dicebear.com/api/identicon/${username}.svg?b=%23ffffff22`,
+        tag: username
       })
     }
   }
