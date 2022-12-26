@@ -5,7 +5,7 @@ const chatListEl = document.getElementById('chat-grid') as HTMLDivElement;
 
 const messageQueue: string[] = [];
 
-const wss = new WebSocket('ws://api.jaxbot.co.uk:6982');
+const wss = new WebSocket('wss://api.jaxbot.co.uk:6982');
 
 wss.onopen = () => {
   while (messageQueue.length > 0) {
